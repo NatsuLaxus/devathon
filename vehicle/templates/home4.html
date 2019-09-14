@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block head %}
+	<div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="/vehicle/">Registered</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/vehicle/register/">Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/logout/">logout</a>
+              </li>
+            </ul>
+	</div>
+{% endblock %}
+
+{% block body %}
+	<table class="table col-md-6 col-md-offset-3 table-bordered" >		
+				<thead class="thead-dark">
+					<th scope="col">Name</th>
+					<th scope="col">Regn No</th>
+
+				</thead>
+				{% for d in details %}
+				<tbody>
+					<tr scope="row">
+						<td>{{d.owner}}</td>
+						<td>{{d.reg}}</td>
+					</tr>
+				</tbody>
+				{% endfor %}
+{% endblock %}
